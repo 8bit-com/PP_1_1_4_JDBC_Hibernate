@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="UserServiceTest" time="0.69" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="UserServiceTest" time="0.699" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -61,10 +61,10 @@
     <property name="java.vendor.version" value="Corretto-17.0.4.9.1"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="UserServiceTest" name="saveUser" time="0.545"/>
-  <testcase classname="UserServiceTest" name="removeUserById" time="0.029"/>
-  <testcase classname="UserServiceTest" name="getAllUsers" time="0.035"/>
-  <testcase classname="UserServiceTest" name="dropUsersTable" time="0.023"/>
-  <testcase classname="UserServiceTest" name="createUsersTable" time="0.026"/>
-  <testcase classname="UserServiceTest" name="cleanUsersTable" time="0.032"/>
+  <testcase classname="UserServiceTest" name="saveUser" time="0.511"/>
+  <testcase classname="UserServiceTest" name="removeUserById" time="0.034"/>
+  <testcase classname="UserServiceTest" name="getAllUsers" time="0.063"/>
+  <testcase classname="UserServiceTest" name="dropUsersTable" time="0.028"/>
+  <testcase classname="UserServiceTest" name="createUsersTable" time="0.028"/>
+  <testcase classname="UserServiceTest" name="cleanUsersTable" time="0.035"/>
 </testsuite>

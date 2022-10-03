@@ -25,14 +25,6 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Таблица создана");
         } catch (SQLException e) {
             e.printStackTrace();
-//        } finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
         }
     }
 
@@ -42,14 +34,6 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Таблица удалена");
         } catch (SQLException e) {
             e.printStackTrace();
-//        } finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
         }
     }
 
@@ -67,20 +51,12 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        try (Statement statement = connection.createStatement()) {
-            String sql = "DELETE FROM new_schema.users where id";
-            statement.executeUpdate(sql);
+        String sql = "DELETE FROM new_schema.users where id";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.executeUpdate(sql);
             System.out.println("User удален");
         } catch (SQLException e) {
             e.printStackTrace();
-//        } finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
         }
     }
 
@@ -88,8 +64,8 @@ public class UserDaoJDBCImpl implements UserDao {
         List<User> allUser = new ArrayList<>();
         String sql = "SELECT id, name, lastName, age from new_schema.users";
 
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(sql);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            ResultSet resultSet = preparedStatement.executeQuery(sql);
 
             while (resultSet.next()) {
                 User user = new User();
@@ -102,34 +78,18 @@ public class UserDaoJDBCImpl implements UserDao {
 
         } catch (Exception e) {
             e.printStackTrace();
-//        } finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
         }
         return allUser;
     }
 
     public void cleanUsersTable() {
         String sql = "DELETE FROM new_schema.users";
-        try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate(sql);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.executeUpdate(sql);
             System.out.println("Таблица очищена");
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Не удалось очистить");
-//        } finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
         }
     }
 }
