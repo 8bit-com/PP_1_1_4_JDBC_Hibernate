@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="new_schema@localhost" uuid="6c600142-20a8-4cc3-b35b-b3e84054b0c7">
+    <data-source source="LOCAL" name="config.xml/Hibernate" uuid="a676a3d2-03b9-4ea8-9fc7-fe13e046796b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/user/IdeaProjects/PP_1_1_3-4_JDBC_Hibernate/src/main/java/config.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/new_schema</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
